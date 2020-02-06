@@ -3,7 +3,7 @@ import { observer } from 'mobx-react-lite';
 import MainStore from './stores/MainStore';
 import { getWorkout, getWorkouts } from './utils/TrainerRoadAPI';
 import Main from './containers/Main';
-import { BrowserRouter as Router, Route, Switch, useParams } from 'react-router-dom';
+import { HashRouter as Router, Route, Switch, useParams } from 'react-router-dom';
 
 const HR = '';
 const POWER = '';
