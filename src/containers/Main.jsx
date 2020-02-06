@@ -100,7 +100,7 @@ const Main = observer(() => {
   const workoutTime = main.startTime ? Date.now() - main.startTime : 
     main.pauseTime ? main.pauseTime - main.startTime : 0;
 
-  const workoutTimeString = workoutTime ? moment.utc(workoutTime).format('HH:mm:ss') : '00:00:00.000'
+  const workoutTimeString = workoutTime ? moment.utc(workoutTime).format('HH:mm:ss') : '00:00:00'
 
   const interval = main.workout && 
     main.workout.intervalData && 
@@ -108,7 +108,7 @@ const Main = observer(() => {
   console.log('workoutTime: ', workoutTime / 1000);
   console.log('INTERVAL', interval);
   console.log('interval data',  main.workout.intervalData);
-  const intervalTime = interval ? moment.utc((interval.End * 1000) - workoutTime).format('HH:mm:ss') : '00:00:00.000'
+  const intervalTime = interval ? moment.utc((interval.End * 1000) - workoutTime).format('HH:mm:ss') : '00:00:00'
   const target = main.workout.workoutData && main.workout.workoutData.find(({seconds}) => (Math.round((workoutTime || 1) / 1000) * 1000) === seconds);
   console.log('TARGET: ', target);
   return (
