@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/TrainerRoadWebWorkout/static/css/main.5ecd60fb.chunk.css",
+    "main.js": "/TrainerRoadWebWorkout/static/js/main.9db333d8.chunk.js",
+    "main.js.map": "/TrainerRoadWebWorkout/static/js/main.9db333d8.chunk.js.map",
+    "runtime-main.js": "/TrainerRoadWebWorkout/static/js/runtime-main.d42fdba3.js",
+    "runtime-main.js.map": "/TrainerRoadWebWorkout/static/js/runtime-main.d42fdba3.js.map",
+    "static/js/2.db4bb9f1.chunk.js": "/TrainerRoadWebWorkout/static/js/2.db4bb9f1.chunk.js",
+    "static/js/2.db4bb9f1.chunk.js.map": "/TrainerRoadWebWorkout/static/js/2.db4bb9f1.chunk.js.map",
+    "index.html": "/TrainerRoadWebWorkout/index.html",
+    "precache-manifest.39d7e7b72f72dd150ea4b265136b653c.js": "/TrainerRoadWebWorkout/precache-manifest.39d7e7b72f72dd150ea4b265136b653c.js",
+    "service-worker.js": "/TrainerRoadWebWorkout/service-worker.js",
+    "static/css/main.5ecd60fb.chunk.css.map": "/TrainerRoadWebWorkout/static/css/main.5ecd60fb.chunk.css.map",
+    "static/js/2.db4bb9f1.chunk.js.LICENSE": "/TrainerRoadWebWorkout/static/js/2.db4bb9f1.chunk.js.LICENSE"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.d42fdba3.js",
+    "static/js/2.db4bb9f1.chunk.js",
+    "static/css/main.5ecd60fb.chunk.css",
+    "static/js/main.9db333d8.chunk.js"
+  ]
+}
