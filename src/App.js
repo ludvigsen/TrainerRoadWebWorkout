@@ -1,26 +1,51 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useContext, useEffect } from 'react';
+import { observer } from 'mobx-react-lite';
+import MainStore from './stores/MainStore';
+import { getWorkout, getWorkouts } from './utils/TrainerRoadAPI';
+import Main from './containers/Main';
+import { BrowserRouter as Router, Route, Switch, useParams } from 'react-router-dom';
 
-function App() {
+const HR = '';
+const POWER = '';
+const CADENCE = '';
+const FTP = 320;
+
+const LoadWorkout = () => {
+  let { workoutId } = useParams();
+  const main = useContext(MainStore);
+  // Initialize workout
+  useEffect(() => {
+    async function fetchData() {
+      if (!workoutId) {
+        const workouts = await getWorkouts();
+        console.log('WORKOUTS: ', workouts);
+        workoutId = workouts[4].Id;
+      }
+      const workout = await getWorkout(workoutId);
+      console.log('WORKOUT: ', workout);
+      main.workout = workout;
+      main.workoutData = workout.workoutData.map(d => ({ x: d.seconds, y: d.memberFtpPercent }));
+    }
+    fetchData();
+  }, [main]);
+  return null;
+};
+
+const App = observer(() => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Switch>
+        <Route path="/:workoutId">
+          <LoadWorkout />
+          <Main />
+        </Route>
+        <Route path="/">
+          <LoadWorkout />
+          <Main />
+        </Route>
+      </Switch>
+    </Router>
   );
-}
+});
 
 export default App;
